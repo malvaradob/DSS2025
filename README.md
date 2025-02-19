@@ -25,7 +25,7 @@ Aqui podrá encontrar los Ejemplos y Ejercicios desarrollados en clase.
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/usuario/nombre-del-repo.git
+    git clone https://github.com/malvaradob/DSS2025.git
     ```
 2. Entra al directorio del proyecto:
     ```bash
