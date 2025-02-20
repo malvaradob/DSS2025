@@ -18,7 +18,7 @@ while ($fila <= 10) {
     }
         
 
-    echo "<br>Fila : $fila";
+    echo "<br>Fila : $fila <br>";
 
 
     // Variable de incremento
