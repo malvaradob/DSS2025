@@ -7,8 +7,7 @@ DESARROLLO DE APLICACINES WEB CON SOFTWARE INTERPRETADO EN EL SERVIDOR
 2. [Tecnologías](#tecnologías)
 3. [Instalación](#instalación)
 4. [Uso](#uso)
-5. [Contribución](#contribución)
-6. [Licencia](#licencia)
+
 
 ## Descripción
 
