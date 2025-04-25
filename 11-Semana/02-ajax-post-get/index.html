@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uso de AJAX con formularios</title>
+</head>
+<body>
+    <form id="frmGET">
+        <input type="text" name="nombre">
+        <button type="submit">Enviar datos por GET</button>
+    </form>
+
+    <form id="frmPOST">
+        <input type="text" id="nombre" >
+        <button type="submit">Enviar datos por POST</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        document.getElementById("frmGET").onsubmit = function(e){
+            e.preventDefault();
+            const peticion = new XMLHttpRequest();
+            peticion.open("GET","servidor.php?nombre="+document.querySelector("[name=nombre]").value,true);
+            peticion.onreadystatechange = function(){
+                if(peticion.readyState == 4 && peticion.status == 200){
+                    document.getElementById("resultado").innerHTML = peticion.responseText;
+                }
+            }
+            peticion.send();
+        }
+
+
+        document.getElementById("frmPOST").onsubmit = function(e){
+            e.preventDefault();
+            const peticion = new XMLHttpRequest();
+            peticion.open("POST","servidor.php",true);
+            peticion.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            peticion.onreadystatechange = function(){
+                if(peticion.readyState == 4 && peticion.status == 200){
+                    document.getElementById("resultado").innerHTML = peticion.responseText;
+                }
+            }
+            peticion.send("nombre="+document.getElementById("nombre").value);
+        }
+    </script>
+</body>
+</html>

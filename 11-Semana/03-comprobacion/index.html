@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobacion</title>
+</head>
+<body>
+    <div id="validacion"></div>
+
+    <script>
+        let ajax;
+        if(window.XMLHttpRequest)
+        {
+            ajax = new XMLHttpRequest();
+            document.getElementById("validacion").innerHTML = "Soporta XMLHttpRequest";
+        }else{
+            ajax = new ActiveXObject("Microsoft.XMLHTTP");
+            document.getElementById("validacion").innerHTML = "Soporta ActiveXObject (Navegador antiguo)";
+        }
+    </script>
+</body>
+</html>

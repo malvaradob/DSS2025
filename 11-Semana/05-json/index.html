@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obtener JSON</title>
+</head>
+<body>
+    <button onclick="loadData()">Obtener JSON</button>
+<div id="resultado"></div>
+<script>
+    function loadData(){
+        fetch("servidor.php")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("resultado").innerHTML = `Nombre: ${data.nombre}, Edad: ${data.edad}`;
+        });
+    }
+</script>
+</body>
+</html>

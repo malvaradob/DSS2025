@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra primera peticion Ajax</title>
+</head>
+
+<body>
+    <button onclick="enviarDatos()">Realizando una peticion Ajax</button>
+    <div id="resultado"></div>
+
+    <script>
+        function enviarDatos() {
+            const peticion = new XMLHttpRequest();
+            peticion.open("GET", "servidor.php", true);
+            peticion.onreadystatechange = function () {
+                if (peticion.readyState == 4 && peticion.status == 200) {
+                    document.getElementById("resultado").innerHTML = peticion.responseText;
+                }
+            }
+            peticion.send();
+        }
+    </script>
+</body>
+
+</html>

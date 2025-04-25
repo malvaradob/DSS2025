@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizando ajax con jquery</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <button id="btnPeticion">Realizando peticion con jquery</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        $(document).ready(function(){
+
+            $("#btnPeticion").click(function(){
+                $.ajax({
+                    url:"servidor.php",
+                    method:"GET",
+                    success:function(response){
+                        $("#resultado").html(response);
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
